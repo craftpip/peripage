@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "outDir": "out",
+    "module": "none",
+    "target": "es5",
+    "allowJs": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "out/**"
+  ],
+  "include": [
+    "**/*.ts"
+  ],
+  "files": [
+    "peripage.ts"
+  ]
+}

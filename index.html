@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PeriPage</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="out/peripage.js"></script>
+    <script src="demo.js"></script>
+    <link rel="stylesheet"
+          href="demo.css">
+</head>
+<body>
+
+<div class="base">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 example">
+                <h2>PeriPage</h2>
+                <p>A small script to generates ascii content for print receipts</p>
+                <hr>
+                <h4>
+                    Getting started.
+                </h4>
+                <p>create instance with page width</p>
+                <pre>let page = new PeriPage(38);</pre>
+                <p>
+                    add one line of text
+                </p>
+                <pre>page.addText([
+    {
+        content: 'Ash Ketchum International Restaurant'.toUpperCase(),
+        align: PeriPosition.center
+    }
+]);</pre>
+                <p>
+                    adding a full width horizontal line
+                </p>
+                <pre>page.addHorizontalLine();</pre>
+                <p>
+                    adding multiple cells in one line to make a table.
+                    the width is in percentage when not given it will adjust equal cell width
+                </p>
+                <pre>page.addText([
+    {
+        content: 'qty'.toUpperCase(),
+        align: PeriPosition.left,
+        width: 10
+    },
+    {
+        content: 'Item'.toUpperCase(),
+        align: PeriPosition.left,
+        width: 70
+    },
+    {
+        content: 'Amount'.toUpperCase(),
+        align: PeriPosition.right
+    },
+]);</pre>
+                <p>
+                    get rendered output
+                </p>
+                <pre>let output = page.output();</pre>
+
+                <p>
+                    Please find the <a href="demo.js">demo.js</a> file for pre for the receipt generated on the right.
+                    <br>
+                    thank you.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <pre class="output"
+                     style="font-family: Consolas"></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

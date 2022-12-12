@@ -1,0 +1,25 @@
+{
+  "name": "peripage",
+  "version": "1.0.0",
+  "description": "text display that you print on a receipt paper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craftpip/peripage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/craftpip/peripage/issues"
+  },
+  "homepage": "https://github.com/craftpip/peripage#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  },
+  "files": [
+    "peripage.ts"
+  ]
+}

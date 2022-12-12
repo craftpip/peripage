@@ -1,10 +1,10 @@
-export enum PeriPosition {
+enum PeriPosition {
     left = 'l',
     right = 'r',
     center = 'c',
 }
 
-export interface PeriCell {
+interface PeriCell {
     startIndex?: number,
     endIndex?: number,
     width?: number,
@@ -12,7 +12,7 @@ export interface PeriCell {
     align: PeriPosition,
 }
 
-export class PeriPage {
+class PeriPage {
     content: string = '';
 
     constructor(public pageWidth: number) {
@@ -73,7 +73,7 @@ export class PeriPage {
         let i = 0;
         for (let c of columns) {
             c.startIndex = i;
-            i += (c.width - 0);
+            i += (c.width);
             c.endIndex = i - 1;
         }
 
@@ -106,7 +106,7 @@ export class PeriPage {
      * @param rows
      * @param indx
      */
-    wrapRow(rows: PeriCell[][], indx: number = 0) {
+    wrapRow(rows: PeriCell[][], indx: number = 0): PeriCell[][] {
         let columns = rows[indx];
         for (let colIndx in columns) {
             let column = columns[colIndx];
@@ -130,7 +130,7 @@ export class PeriPage {
 
                 for (let l of lineAr) {
                     if (currentWrapLength + l.length >= column.width) {
-                        console.log(l.length, currentWrapLength, column.width, this.pageWidth, l);
+                        // console.log(l.length, currentWrapLength, column.width, this.pageWidth, l);
                         overflowWrapAr.push(l);
                     } else {
                         currentWrapAr.push(l);
@@ -162,7 +162,7 @@ export class PeriPage {
                 rows[indx + 1][colIndx].content = wrapOverflow.trim();
             }
 
-            this.log(column);
+            // this.log(column);
         }
 
         // now check if the next row exists, if it exists run loop over it as well.
@@ -203,7 +203,7 @@ export class PeriPage {
      * Log it out.
      * @param a
      */
-    log(a) {
+    log(a: any) {
         console.log('Peri: ', a);
     }
 

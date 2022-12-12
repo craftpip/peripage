@@ -1,0 +1,9 @@
+.base {
+    padding-top: 50px;
+}
+.example pre{
+    background: gray;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
